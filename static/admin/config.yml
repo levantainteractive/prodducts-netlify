@@ -7,17 +7,28 @@ public_folder: /img
 
 collections:
   - name: "video"
-  label: "Video"
-  folder: "src/pages/video"
-  create: true
-  slug: "{{slug}}"
-  fields:
-   - {label: "Template Key", name: "templateKey", widget: "hidden"}
-   - {label: "Title", name: "title", widget: "string"}
-   - {label: "Publish Date", name: "date", widget: "datetime"}
-   - {label: "Description", name: "description", widget: "text"}
-   - {label: "Tags", name: "tags", widget: "list"}
-
+    label: "Video"
+    folder: "src/pages/video"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Tags", name: "tags", widget: "list"}
+  - name: "channel"
+    label: "Channel"
+    folder: "src/pages/channel"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Videos", name: "videos", widget: "relation", collection:"video", searchFields:["title","tags"],valueField:"title",displayFields:["title"]}
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
